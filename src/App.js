@@ -31,15 +31,15 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Random Joke Generator</h1>
-
-      <button onClick={fetchJoke} disabled={loading}>
-        {loading ? "Fetching..." : "Fetch Joke"}
-      </button>
+      <h1>Random Joke</h1>
 
       {!joke && !error && !loading && (
-        <p>Click the button to fetch a joke</p>
+        <p>Click the button to fetch a fresh one.</p>
       )}
+
+      <button onClick={fetchJoke} disabled={loading}>
+        {loading ? "Fetching..." : "Fetch joke"}
+      </button>
 
       {joke && (
         <div className="joke">
