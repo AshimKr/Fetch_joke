@@ -23,7 +23,7 @@ function App() {
       const data = await response.json();
       setJoke(data);
     } catch (err) {
-      setError("Something went wrong. Please try again.");
+      setError("Could not fetch a joke. Try again.");
     } finally {
       setLoading(false);
     }
@@ -48,7 +48,12 @@ function App() {
         </div>
       )}
 
-      {error && <p className="error">{error}</p>}
+      {error && (
+        <div className="error">
+          <p>{error}</p>
+          <button onClick={fetchJoke}>Try again</button>
+        </div>
+      )}
     </div>
   );
 }
